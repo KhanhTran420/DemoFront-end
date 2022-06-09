@@ -1,0 +1,36 @@
+<h1>Danh sách</h1>
+<a routerLink="/company/create">Tạo mới danh mục</a>
+<br>
+
+<table border="1px">
+  <tr>
+    <td>STT</td>
+    <td>Mã công ty</td>
+    <td>Tên công ty</td>
+    <td>Ảnh</td>
+    <td>Mô tả</td>
+    <td>Số lượng nhân viên</td>
+    <td>Tỉnh thành</td>
+    <td>Bản đồ</td>
+    <td>Điện Thoại</td>
+    <td>Trạng thái tuyển dụng</td>
+
+
+  </tr>
+  <tr *ngFor="let company of company; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{company.codeCompany}}</td>
+    <td>{{company.name}}</td>
+    <td><img src="http://localhost:8080/image/{{company.avatar}}" width="100px" height="100px"></td>
+    <td>{{company.description}}</td>
+    <td>{{company.emplployeeQuantity}}</td>
+    <td>{{company.city.name}}</td>
+    <td>{{company.linkMap}}</td>
+    <td>{{company.phone}}</td>
+    <td>{{company.statusCompany}}</td>
+
+
+    <td><a [routerLink]="['/company/edit',company.id]">Edit</a></td>
+    <td><a [routerLink]="['/company/delete',company.id]">Delete</a></td>
+  </tr>
+</table>

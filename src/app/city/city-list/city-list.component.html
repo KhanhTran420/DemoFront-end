@@ -1,0 +1,19 @@
+<h1>Danh sách city</h1>
+<!--<a routerLink="/book/create">Tạo mới danh mục</a>-->
+<br>
+
+<table>
+  <tr>
+    <td>STT</td>
+    <td>Tên</td>
+    <td></td>
+    <td></td>
+
+  </tr>
+  <tr *ngFor="let city of city; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{city.name}}</td>
+    <td><a [routerLink]="['/city/edit',city.id]">Edit</a></td>
+    <td><a [routerLink]="['/city/delete',city.id]">Delete</a></td>
+  </tr>
+</table>
