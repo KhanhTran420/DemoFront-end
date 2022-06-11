@@ -1,0 +1,129 @@
+<h1>Điền Thông Tin Công ty</h1>
+<!--<h2><a routerLink="/product/list">Home</a></h2>-->
+<div class="container">
+  <form [formGroup]="recruitmentForm" (ngSubmit)="submit()" enctype="multipart/form-data">
+    <table border="1px" >
+      <div class="mb-3">
+        <label for="codeRecruitment" class="form-label">Mã Tin</label>
+        <input type="text" class="form-control" id="codeRecruitment" formControlName="codeRecruitment">
+        <div *ngIf="codeRecruitmentControl.touched && codeRecruitmentControl.invalid">
+          <p style="color: red" *ngIf="codeRecruitmentControl.errors?.required">
+            Vui lòng nhập Ma Tin
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="titleRecruitment" class="form-label">Tên Tin</label>
+        <input type="text" class="form-control" id="titleRecruitment" formControlName="titleRecruitment">
+        <div *ngIf="titleRecruitmentControl.touched && titleRecruitmentControl.invalid">
+          <p style="color: red" *ngIf="titleRecruitmentControl.errors?.required">
+            Vui lòng nhập tieu de
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Mô tả</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+        <div *ngIf="descriptionControl.touched && descriptionControl.invalid">
+          <p style="color: red" *ngIf="descriptionControl.errors?.required">
+            Vui lòng nhập mô tả .
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="expDate" class="form-label">Ngay het han</label>
+        <input type="date" class="form-control" id="expDate" formControlName="expDate">
+        <div *ngIf="dateControl.touched && dateControl.invalid">
+          <p style="color: red" *ngIf="dateControl.errors?.required">
+            Vui lòng nhập
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="gender" class="form-label">Gioi tinh</label>
+        <input type="text" class="form-control" id="gender" formControlName="gender">
+        <div *ngIf="genderControl.touched && genderControl.invalid">
+          <p style="color: red" *ngIf="genderControl.errors?.required">
+            Vui lòng nhập
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="emplployeeQuantity" class="form-label">Số Lượng nhân viên</label>
+        <input type="text" class="form-control" id="emplployeeQuantity" formControlName="emplployeeQuantity">
+        <div *ngIf="emplployeeQuantityControl.touched && emplployeeQuantityControl.invalid">
+          <p style="color: red" *ngIf="emplployeeQuantityControl.errors?.required">
+            Vui lòng nhập số lượng .
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="salary" class="form-label">Luong</label>
+        <input type="text" class="form-control" id="salary" formControlName="salary">
+        <div *ngIf="salaryControl.touched && salaryControl.invalid">
+          <p style="color: red" *ngIf="salaryControl.errors?.required">
+            Vui lòng nhập số lượng .
+          </p>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="city"> Thành phố </label> <br>
+        <select  formControlName="city" id="city">
+          <option [value]="city.id" *ngFor="let city of city">{{city.name}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="company"> Cong ty </label> <br>
+        <select  formControlName="company" id="company">
+          <option [value]="company.id" *ngFor="let company of company">{{company.name}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="field"> nganh nghe </label> <br>
+        <select  formControlName="field" id="field">
+          <option [value]="field.id" *ngFor="let field of field">{{field.name}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="vacancy"> vi tri tuyen dung </label> <br>
+        <select  formControlName="vacancy" id="vacancy">
+          <option [value]="vacancy.id" *ngFor="let vacancy of vacancy">{{vacancy.name}}</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="workingTime">thoi gian lam viec </label> <br>
+        <select  formControlName="workingTime" id="workingTime">
+          <option [value]="workingTime.id" *ngFor="let workingTime of workingTime">{{workingTime.name}}</option>
+        </select>
+      </div>
+
+
+      <!--      <div class="mb-3" >-->
+
+      <!--        <form action="/action_page.php" >-->
+
+      <!--&lt;!&ndash;           <input type="radio" id="html" name="statusCompany" [value]="statusActive">&ndash;&gt;-->
+      <!--&lt;!&ndash;           <label for="html">Active</label><br>&ndash;&gt;-->
+      <!--          <label> Trang thai hd-->
+      <!--            <select formControlName="statusCompany" >-->
+
+      <!--            <option *ngFor="let status of statusCompanies" [value]="status">{{status}}</option>-->
+      <!--          </select>-->
+      <!--          </label>-->
+
+      <!--        </form>-->
+      <!--      </div>-->
+
+      <button type="submit" class="btn btn-primary">Thêm</button>
+    </table>
+  </form>
+</div>

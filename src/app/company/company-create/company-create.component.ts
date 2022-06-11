@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Company} from '../../model/company';
 import {City} from '../../model/city';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
@@ -28,8 +28,9 @@ export class CompanyCreateComponent implements OnInit {
     phone: new FormControl('', [Validators.required]),
     // statusCompany: new FormControl('')
   });
-  statusCompany: StatusCompany[] = [];
-  status: string;
+  statusActive = Object.values(StatusCompany.ACTIVE);
+  statusLock = Object.values(StatusCompany.LOCK);
+  statusCompanies = Object.values(StatusCompany);
   constructor(private companyService: CompanyService,
               private cityService: CityService,
               private router: Router) { }
@@ -55,7 +56,7 @@ export class CompanyCreateComponent implements OnInit {
       company.append('city', this.companyForm.get('city').value);
       company.append('linkMap', this.companyForm.get('linkMap').value);
       company.append('phone', this.companyForm.get('phone').value);
-      company.append('statusCompany', this.companyForm.get('statusCompany').value);
+      // company.append('statusCompany', this.companyForm.get('statusCompany').value);
       this.companyService.saveCompany(company).subscribe(() => {
         alert('Success');
       });

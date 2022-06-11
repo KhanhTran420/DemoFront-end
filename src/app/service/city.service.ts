@@ -14,10 +14,10 @@ export class CityService {
   constructor(private http: HttpClient) { }
 
   getAllCity(): Observable<City[]> {
-    return this.http.get<City[]>(API_URL + '/city');
+    return this.http.get<City[]>(API_URL + '/cities');
   }
   saveCity(city: City): Observable<City> {
-    return this.http.post<City>(API_URL + '/city', city);
+    return this.http.post<City>(API_URL + '/cities', city);
   }
   findById(id: number): Observable<City> {
     return this.http.get<City>(`${API_URL}/city/${id}`);

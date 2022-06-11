@@ -1,10 +1,10 @@
-export interface StatusCompany {
-  ACTIVE?: string;
-  NON_ACTIVE?: string;
-  LOCK?: string;
-  UNLOCK?: string;
-  HOT?: string;
-  WAIT?: string;
-  REJECT?: string;
-  ACCEPT?: string;
+export enum StatusCompany {
+  ACTIVE = 'ACTIVE',
+  NON_ACTIVE = 'NON_ACTIVE',
+  LOCK = 'LOCK',
+  UNLOCK = 'UNLOCK',
+  HOT = 'HOT',
+  WAIT = 'WAIT',
+  REJECT = 'REJECT',
+  ACCEPT = 'ACCEPT'
 }

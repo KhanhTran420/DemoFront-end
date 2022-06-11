@@ -1,0 +1,21 @@
+<h1>Xoá sản phẩm</h1>
+<form [formGroup]="companyForm" (ngSubmit)="deleteCompany(id)">
+  <table>
+    <tr>
+      <td>Tên code cong ty:</td>
+      <td><input type="text" formControlName="codeCompany"></td>
+    </tr>
+    <tr>
+      <td>Ten Cong ty</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Mô tả</td>
+      <td><input type="text" formControlName="description"></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td><button>Xoá</button></td>
+    </tr>
+  </table>
+</form>

@@ -13,7 +13,7 @@
     <td>Tỉnh thành</td>
     <td>Bản đồ</td>
     <td>Điện Thoại</td>
-    <td>Trạng thái tuyển dụng</td>
+<!--    <td>Trạng thái tuyển dụng</td>-->
 
 
   </tr>
@@ -25,9 +25,10 @@
     <td>{{company.description}}</td>
     <td>{{company.emplployeeQuantity}}</td>
     <td>{{company.city.name}}</td>
-    <td>{{company.linkMap}}</td>
+    <td><a href="{{company.linkMap}}">Link google Map</a></td>
     <td>{{company.phone}}</td>
-    <td>{{company.statusCompany}}</td>
+<!--    <td>{{company.statusCompany}}</td>-->
+
 
 
     <td><a [routerLink]="['/company/edit',company.id]">Edit</a></td>

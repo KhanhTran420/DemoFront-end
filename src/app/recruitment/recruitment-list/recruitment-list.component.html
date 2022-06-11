@@ -1,0 +1,46 @@
+<h1>Danh sách</h1>
+<!--<a routerLink="/company/create">Tạo mới danh mục</a>-->
+<br>
+
+<table border="1px">
+  <tr>
+    <td>STT</td>
+    <td>Mã Tin</td>
+    <td>Tieu de</td>
+    <td>Mo ta</td>
+    <td>ngay het han</td>
+    <td>gioi tinh</td>
+    <td>Số lượng nhân viên</td>
+    <td>Luong</td>
+<!--    <td>Trang thai</td>-->
+    <td>Ma TP</td>
+    <td>Nganh nghe</td>
+    <td>Vi tri tuyen dung</td>
+    <td>Thoi gian lam viec</td>
+    <td>Cong ty</td>
+
+
+
+  </tr>
+  <tr *ngFor="let recruitment of recruitment; index as i">
+    <td>{{i + 1}}</td>
+    <td>{{recruitment.codeNews}}</td>
+    <td>{{recruitment.title}}</td>
+    <td>{{recruitment.description}}</td>
+    <td>{{recruitment.expDate}}</td>
+    <td>{{recruitment.gender}}</td>
+    <td>{{recruitment.quantity}}</td>
+    <td>{{recruitment.salary}}</td>
+<!--    <td>{{recruitment.status}}</td>-->
+    <td>{{recruitment.city.name}}</td>
+    <td>{{recruitment.field.name}}</td>
+    <td>{{recruitment.vacancies.name}}</td>
+    <td>{{recruitment.workingTime.name}}</td>
+    <td>{{recruitment.company.name}}</td>
+
+    <!--    <td>{{company.statusCompany}}</td>-->
+
+    <td><a [routerLink]="['/recruitment/edit',recruitment.id]">Edit</a></td>
+    <td><a [routerLink]="['/recruitment/delete',recruitment.id]">Delete</a></td>
+  </tr>
+</table>

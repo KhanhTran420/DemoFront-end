@@ -1,0 +1,105 @@
+<h1>Điền Thông Tin Công ty</h1>
+<!--<h2><a routerLink="/product/list">Home</a></h2>-->
+<div class="container">
+  <form [formGroup]="companyForm" (ngSubmit)="editCompany(id)" enctype="multipart/form-data">
+    <input type="hidden" id="id" name="id" formControlName="id">
+
+    <div class="mb-3">
+        <label for="codeCompany" class="form-label">Mã Công ty</label>
+        <input type="text" class="form-control" id="codeCompany" formControlName="codeCompany">
+<!--        <div *ngIf="codeCompanyControl.touched && codeCompanyControl.invalid">-->
+<!--          <p style="color: red" *ngIf="codeCompanyControl.errors?.required">-->
+<!--            Vui lòng nhập tên công ty-->
+<!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="name" class="form-label">Tên Công ty</label>
+        <input type="text" class="form-control" id="name" formControlName="name">
+<!--        <div *ngIf="nameControl.touched && nameControl.invalid">-->
+<!--          <p style="color: red" *ngIf="nameControl.errors?.required">-->
+<!--            Vui lòng nhập tên công ty-->
+<!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="avatar">Ảnh</label>
+        <br>
+        <img src="http://localhost:8080/image/{{avatar}}" width="100" alt="">
+        <input type="file" id="avatar" (change)="onFileSelected($event)">
+      </div>
+      <div class="mb-3">
+        <label for="description" class="form-label">Mô tả</label>
+        <input type="text" class="form-control" id="description" formControlName="description">
+<!--        <div *ngIf="descriptionControl.touched && descriptionControl.invalid">-->
+<!--          <p style="color: red" *ngIf="descriptionControl.errors?.required">-->
+<!--            Vui lòng nhập mô tả .-->
+<!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="address" class="form-label">Địa Chỉ</label>
+        <input type="text" class="form-control" id="address" formControlName="address">
+<!--        <div *ngIf="addressControl.touched && addressControl.invalid">-->
+<!--          <p style="color: red" *ngIf="addressControl.errors?.required">-->
+<!--            Vui lòng nhập địa chỉ-->
+<!--          </p>-->
+          <!--          <p style="color: red" *ngIf="priceControl.errors?.pattern">-->
+          <!--            Vui lòng chỉ nhập số.-->
+          <!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="emplployeeQuantity" class="form-label">Số Lượng nhân viên</label>
+        <input type="text" class="form-control" id="emplployeeQuantity" formControlName="emplployeeQuantity">
+<!--        <div *ngIf="emplployeeQuantityControl.touched && emplployeeQuantityControl.invalid">-->
+<!--          <p style="color: red" *ngIf="emplployeeQuantityControl.errors?.required">-->
+<!--            Vui lòng nhập số lượng .-->
+<!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="city"> Thành phố </label>
+        <select formControlName="city" id="city">
+          <option [value]="city.id" *ngFor="let city of city">{{city.name}}</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="linkMap" class="form-label">Bản đồ</label>
+        <input type="text" class="form-control" id="linkMap" formControlName="linkMap">
+<!--        <div *ngIf="linkMapControl.touched && linkMapControl.invalid">-->
+<!--          <p style="color: red" *ngIf="linkMapControl.errors?.required">-->
+<!--            Vui lòng chọn vị trí .-->
+<!--          </p>-->
+<!--        </div>-->
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">SĐT</label>
+        <input type="text" class="form-control" id="phone" formControlName="phone">
+<!--                <div *ngIf="phoneControl.touched && phoneControl.invalid">-->
+<!--                  <p style="color: red" *ngIf="phoneControl.errors?.required">-->
+<!--                    Vui lòng nhập số điện thoại .-->
+<!--                  </p>-->
+<!--                </div>-->
+      </div>
+<!--      <div class="mb-3">-->
+
+<!--        <form action="/action_page.php">-->
+
+<!--          &lt;!&ndash;           <input type="radio" id="html" name="statusCompany" [value]="statusActive">&ndash;&gt;-->
+<!--          &lt;!&ndash;           <label for="html">Active</label><br>&ndash;&gt;-->
+<!--          <label> Trang thai hd-->
+<!--            <select formControlName="statusCompany">-->
+
+<!--              <option *ngFor="let status of statusCompanies" [value]="status">{{status}}</option>-->
+<!--            </select>-->
+<!--          </label>-->
+
+<!--        </form>-->
+<!--      </div>-->
+      <button type="submit" class="btn btn-primary">Sua</button>
+
+  </form>
+</div>
+
+
